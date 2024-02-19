@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INESSS - Galerie photo Club Social Québec</title>
+	<link rel="stylesheet" href="styles.css">
+	     <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: blue;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-weight: bold;
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        #club-photo {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .activity-button {
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .program-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .program-button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #000;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .program-description {
+            text-align: left;
+            display: none;
+        }
+
+        .upcoming-events {
+            color: red;
+            font-weight: bold;
+            text-decoration: underline;
+            animation: blink 1s infinite;
+        }
+
+        #footer {
+            text-align: center;
+            margin-top: 50px;
+            font-style: italic;
+            color: gray;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .program-button:hover + .program-description {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>INESSS</h1>
+
+    <h2>Galerie photo Club Social Québec</h2>
+
+    <img id="club-photo" src="C:\Users\Sofiane Yacine\OneDrive - Centre de recherche du CHU de Québec\Bureau\Projet codage\Flyer Club Social.png" alt="Flyer Club Social">
+
+    <button class="activity-button" onclick="openSwayLink('activites_2023')">Activités 2023</button>
+
+    <div class="program-buttons">
+        <button class="program-button" onclick="openSwayLink('septembre')">Septembre</button>
+        <button class="program-button" onclick="openSwayLink('octobre')">Octobre</button>
+        <button class="program-button" onclick="openSwayLink('novembre')">Novembre</button>
+        <button class="program-button" onclick="openSwayLink('decembre')">Décembre</button>
+    </div>
+
+    <button class="activity-button" onclick="openSwayLink('activites_2024')">Activités 2024</button>
+
+    <div class="program-buttons">
+        <button class="program-button" onclick="openSwayLink('janvier')">Janvier</button>
+        <button class="program-button" onclick="openSwayLink('fevrier')">Février</button>
+    </div>
+
+    <h3 class="upcoming-events">Événements à venir</h3>
+
+    <div class="program-buttons">
+        <button class="program-button" id="mars-button" onclick="openSwayLink('mars')">Mars</button>
+        <button class="program-button" onclick="openSwayLink('avril')">Avril</button>
+        <button class="program-button" onclick="openSwayLink('mai')">Mai</button>
+        <button class="program-button" onclick="openSwayLink('juin')">Juin</button>
+        <button class="program-button" onclick="openSwayLink('septembre2')">Septembre</button>
+    </div>
+
+    <div class="program-description" id="mars-description">
+        <p>En positionnant la souris sur le bouton, la description suivante apparaît : 5 à 7 St-Patrick ou LONDON JACK</p>
+    </div>
+
+    <p id="footer">Inesss-Club Social Québec-2024</p>
+
+    <script>
+        function openSwayLink(link) {
+            const swayLinks = {
+                septembre: '',
+                octobre: 'https://sway.cloud.microsoft/CQCM24UsyFgUVpPy?ref=Linkhttps://sway.cloud.microsoft/CQCM24UsyFgUVpPy?ref=Link',
+                novembre: '',
+                decembre: '',
+                janvier: '',
+                fevrier: 'https://sway.cloud.microsoft/9ITQmHVEQS1kU6ek?ref=Link',
+                mars: '',
+                avril: '',
+                mai: '',
+                juin: '',
+                septembre2: '',
+            };
+
+            const swayLink = swayLinks[link];
+
+            if (swayLink) {
+                window.open(swayLink, '_blank');
+            } else {
+                alert('Lien non disponible');
+            }
+        }
+    </script>
+</body>
+</html>
